@@ -11,15 +11,7 @@ INVEST · BUILD · EXECUTE · GROW
 - `why-us.html` — GGI approach and engagement path
 - `contact.html` — direct contact and enquiry form
 
-## Company information used
-- RC Number: 9879669
-- Registered: 2026
-- Status: ACTIVE
-- Company Type: PRIVATE COMPANY LIMITED BY SHARES
-- Location: Minna, Niger State, Nigeria
-- Email: mohammadhamisugimi@gmail.com
-- Phone: +234 803 312 2777
-- Director / Principal Shareholder: Hamisu Mohammed
+
 
 ## Business areas
 1. Construction & Infrastructure
