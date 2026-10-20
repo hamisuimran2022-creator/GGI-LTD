@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>GIMISCO | Admin</title>
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <link rel="stylesheet" href="css/admin.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+
+  <main id="loginScreen" class="auth-screen">
+
+    <div class="auth-card">
+
+      <div class="auth-brand">
+        <span class="auth-line"></span>
+        <span>GIMISCO</span>
+        <span class="auth-line"></span>
+      </div>
+
+      <p class="eyebrow">PRIVATE ADMINISTRATION</p>
+
+      <h1>Admin Login</h1>
+
+      <p class="auth-description">
+        Secure access to the GIMISCO media management system.
+      </p>
+
+      <form id="loginForm">
+
+        <label for="email">
+          Email Address
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Admin email"
+          autocomplete="username"
+          required
+        >
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button
+          type="submit"
+          class="gold-button"
+          id="loginButton"
+        >
+          SIGN IN
+        </button>
+
+        <p id="loginMessage" class="message"></p>
+
+      </form>
+
+      <a href="index.html" class="back-link">
+        ← Return to website
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- DASHBOARD -->
+
+  <main id="dashboardScreen" class="dashboard" hidden>
+
+    <header class="admin-header">
+
+      <div>
+        <p class="eyebrow">GIMISCO GLOBAL INVESTMENT LIMITED</p>
+        <h1>Media Dashboard</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a href="index.html" class="outline-button">
+          View Website
+        </a>
+
+        <button
+          id="logoutButton"
+          class="logout-button"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <section class="dashboard-content">
+
+      <!-- STATS -->
+
+      <div class="stats-grid">
+
+        <article class="stat-card">
+          <span>Total Media</span>
+          <strong id="totalMedia">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Images</span>
+          <strong id="totalImages">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span>Videos</span>
+          <strong id="totalVideos">0</strong>
+        </article>
+
+      </div>
+
+
+      <!-- UPLOAD -->
+
+      <section class="panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">CONTENT MANAGEMENT</p>
+            <h2>Upload New Media</h2>
+          </div>
+
+        </div>
+
+
+        <form id="uploadForm" class="upload-form">
+
+          <div class="form-grid">
+
+            <div class="form-field">
+
+              <label for="mediaTitle">
+                Title
+              </label>
+
+              <input
+                id="mediaTitle"
+                type="text"
+                placeholder="Media title"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="mediaType">
+                Media Type
+              </label>
+
+              <select id="mediaType" required>
+
+                <option value="image">
+                  Image
+                </option>
+
+                <option value="video">
+                  Video
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="mediaDescription">
+              Description
+            </label>
+
+            <textarea
+              id="mediaDescription"
+              rows="4"
+              placeholder="Describe this media..."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="mediaFile">
+              Select File
+            </label>
+
+            <input
+              id="mediaFile"
+              type="file"
+              accept="image/*,video/*"
+              required
+            >
+
+            <small>
+              Images and videos are stored securely in GIMISCO
+              Supabase Storage.
+            </small>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="gold-button"
+            id="uploadButton"
+          >
+            UPLOAD & PUBLISH
+          </button>
+
+          <div
+            id="uploadProgress"
+            class="upload-progress"
+            hidden
+          >
+            Uploading...
+          </div>
+
+          <p
+            id="uploadMessage"
+            class="message"
+          ></p>
+
+        </form>
+
+      </section>
+
+
+      <!-- MEDIA -->
+
+      <section class="panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <p class="eyebrow">PUBLISHED CONTENT</p>
+            <h2>Media Library</h2>
+          </div>
+
+          <button
+            id="refreshButton"
+            class="outline-button"
+          >
+            Refresh
+          </button>
+
+        </div>
+
+
+        <div
+          id="adminMediaGrid"
+          class="admin-media-grid"
+        >
+
+          <div class="empty-state">
+            Loading media...
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/admin.js"></script>
+
+</body>
+</html>
